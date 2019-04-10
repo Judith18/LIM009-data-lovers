@@ -59,7 +59,7 @@ btnIndicators.addEventListener('click', () => {
       indicatorsPage.classList.add('hide');
       dataIndicatorsPage.classList.remove('hide');
       dataIndicatorsPage.classList.add('show');
-      let dataIndividual = "";
+      let dataIndividual;
       const indicatorId = dato.id;
       // mostrar el nombre del indicador en la pagina 3
       const indicatorSelected = document.getElementById('paint-indicator');
