@@ -9,22 +9,21 @@ const tablaDataIndicators = document.getElementById("tabla-data");
 const tablaEstadist = document.getElementById("tabla-estadist");
 const orderDataBtn = document.getElementById("order-data-btn");
 
+let pages = (pageToShow) => {
+  [homePage, indicatorsPage, dataIndicatorsPage].forEach(page => {
+    page.classList.add('hide');
+    page.classList.remove('show')
+  })
+  pageToShow.classList.add('show');
+  pageToShow.classList.remove('hide')
+}
+
 home.addEventListener('click', () => {
-  homePage.classList.add('show');
-  homePage.classList.remove('hide');
-  indicatorsPage.classList.add('hide');
-  indicatorsPage.classList.remove('show');
-  dataIndicatorsPage.classList.add('hide');
-  dataIndicatorsPage.classList.remove('show');
+  pages(homePage);
 });
 
 indicatorsP.addEventListener('click', () => {
-  homePage.classList.remove('show');
-  homePage.classList.add('hide');
-  indicatorsPage.classList.add('show');
-  indicatorsPage.classList.remove('hide');
-  dataIndicatorsPage.classList.remove('show');
-  dataIndicatorsPage.classList.add('hide');
+  pages(indicatorsPage);
 });
 
 btnIndicators.addEventListener('click', () => {
@@ -55,10 +54,7 @@ btnIndicators.addEventListener('click', () => {
   let returnIndicatorsData;
   datosList.forEach(dato => {
     dato.addEventListener('click', () => {
-      indicatorsPage.classList.remove('show');
-      indicatorsPage.classList.add('hide');
-      dataIndicatorsPage.classList.remove('hide');
-      dataIndicatorsPage.classList.add('show');
+      pages(dataIndicatorsPage);
       let dataIndividual="";
       const indicatorId = dato.id;
       // mostrar el nombre del indicador en la pagina 3
