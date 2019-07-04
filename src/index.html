@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es">  
+<html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
 </head>
 
 <body>
@@ -93,14 +96,14 @@
               <div class="card-body">
                 <p class="card-text">Encontraras información acerca de:</p>
                 <ul>
-                 <li> Sector Población</li>
-                 <li> Sector Laboral</li>
-                 <li> Sector Salud</li>
-                 <li> Sector Educativo</li>
-                 <li> Sector Comercial</li>
-                 <li> Sector Género</li>
-                 <li> Sector Capital Humano</li>
-              </ul>
+                  <li> Sector Población</li>
+                  <li> Sector Laboral</li>
+                  <li> Sector Salud</li>
+                  <li> Sector Educativo</li>
+                  <li> Sector Comercial</li>
+                  <li> Sector Género</li>
+                  <li> Sector Capital Humano</li>
+                </ul>
               </div>
             </div>
           </aside>
@@ -176,34 +179,67 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12">
-            <p>Ordenar:</p>
-            <select id="select-order" class="select-order">
-              <option value="asc">Ascendente</option>
-              <option value="desc">Descendente</option>
-            </select>
-            <button id="order-data-btn" class="order-data-btn">Ver</button>
+          <div class="col-xl-4 col-lg-4 col-md-5">
+            <aside id="menu-left">
+              <form id="frm-search" name="frm">
+                <div id="select-laboral-force">
+                  <p id='dato-est' class="sub-button">Ver datos Estadísticos</p>
+                  <label><input type="radio" name="datosEstats" value="Tabla General" checked> Tabla General</label><br>
+
+                  <label><input type="radio" name="datosEstats" value="Gráficos"> Gráficos</label><br>
+
+                  <label><input type="radio" name="datosEstats" value="Tablas estadísticas"> Tablas estadísticas</label>
+                </div>
+                <div class="row">
+                  <div id='style-graf' class="hide col-12">
+                    <p class="style-graf sub-button">Tipos de gráfico</p>
+                    <label><input type="radio" name="typeGrafico" value="LineChart" checked> Gráfico de
+                      línea</label><br>
+                    <label><input type="radio" name="typeGrafico" value="Histogram"> Histograma</label><br>
+                    <label><input type="radio" name="typeGrafico" value="ColumnChart"> Gráfico de barras</label><br>
+                    <label><input type="radio" name="typeGrafico" value="ScatterChart"> Gráfico de
+                      dispersión</label><br>
+                    <label><input type="radio" name="typeGrafico" value="AreaChart"> Gráfico de áreas</label>
+                  </div>
+                </div>
+                <div class='row'>
+                  <div id='dato-order' class='col-12'>
+                    <p class="sub-button">Ordenar Porcentajes</p>
+                    <label><input type="radio" name="dataOrder" value="asc"> Ascendente</label><br>
+                    <label><input type="radio" name="dataOrder" value="desc"> Descendente</label><br>
+                  </div>
+                </div>
+              </form>
+            </aside>
+          </div>
+          <div class="col-xl-8 col-lg-8 col-md-7">
+            <div class="row">
+              <div class="col-12 col-sm-6 col-md-6">
+                <table id='dateTotal' class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Años</th>
+                      <th scope="col">Porcentajes</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tabla-data">
+                  </tbody>
+                </table>
+              </div>
+              <div id="chart_div1" class='hide'>
+                <div class="col-8" id="chart_div"></div>
+              </div>
+
+            </div>
+            <div class="col-12 col-sm-6 col-md-6">
+              <table id="tabla-estadist" class="hide table table-bordered">
+              </table>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-6">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Años</th>
-                  <th scope="col">Porcentajes</th>
-                </tr>
-              </thead>
-              <tbody id="tabla-data">
-              </tbody>
-            </table>
-          </div>
-          <div class="col-12 col-sm-6 col-md-6">
-            <table id="tabla-estadist" class="table table-bordered">
-            </table>
-          </div>
-        </div>
-      </section>
+    </div>
+
+    </section>
     </div>
   </main>
   <footer>
