@@ -17,25 +17,21 @@
   <header id="logo-box">
     <nav class="navbar navbar-expand-lg navbar-light bg">
       <a class="navbar-brand" href="#">
-        <img class="logo" src="https://i.postimg.cc/Kjx8Sj6X/logo.png" alt="Logo LatinFemData">
+        <img class="logo" src="/src/img/logo.png" width="50" height="70" alt="Logo LatinFemData">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" id="home" href="#">Inicio <span class="sr-only">(current)</span></a>
+        <ul class="navbar-nav ">
+          <li class="nav-item active" id="navHome">
+            <a class="nav-link" id="home" href="#"><strong>INICIO</strong></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" id="indicators-p" href="#">Datos estadisticos</a>
+          <li class="nav-item" id="navEstadistico">
+            <a class="nav-link" id="indicators-p" href="#"><strong>ESTADÍSTICOS</strong></a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar en la web" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-        </form>
       </div>
     </nav>
   </header>
@@ -114,7 +110,7 @@
       <section id="indicators-page" class="hide">
         <div class="row">
           <div class="col-12">
-            <img src="img/poblacion-mujeres.jpg" class="population" alt="...">
+            <img src="/src/img/mujeres.jpg" class="population" alt="...">
           </div>
         </div>
         <div class="row">
@@ -165,7 +161,7 @@
           </div>
         </div>
       </section>
-    </div>
+    </div><br>
     <div class="container">
       <section id="page-data-indicators" class="hide">
         <div class="row">
@@ -219,7 +215,7 @@
                   <thead>
                     <tr>
                       <th scope="col">Años</th>
-                      <th scope="col">Porcentajes</th>
+                      <th scope="col">Porcentajes %</th>
                     </tr>
                   </thead>
                   <tbody id="tabla-data">
@@ -240,14 +236,19 @@
     </div>
 
     </section>
+    </div><br>
+  </main><br>
+  <footer class="footer">
+    <div class="container  mt-6">
+      <div class="row  mt-6">
+        <div class="col-sm-12  mt-6">
+          <div class="copyright-box mt-6">
+            <p class="copyright  mt-6">&copy; Copyright <strong>2019</strong> - LatinFeminData</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </main>
-  <footer>
-    <img class="logo" src="https://i.postimg.cc/Kjx8Sj6X/logo.png" alt="Logo LatinFemData">
-    <div class="dircc">
-      <p>Av. Gral. Garzón 654 - 658, Jesús María Lima-Perú<br>Teléfono: 652-0000 203-2640 - Fax:
-        431-1340<br>latinfemidata@latinfemidata.gob.pe </p>
-    </div>
+    
   </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

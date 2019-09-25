@@ -16,6 +16,20 @@ const radTypeGraf = document.getElementById('style-graf')
 const datosEstadisticos = document.getElementsByName("datosEstats");
 const typeGraficos = document.getElementsByName('typeGrafico');
 
+const navHome = document.getElementById("navHome");
+const navEstadistico = document.getElementById("navEstadistico");
+
+navHome.addEventListener('click', () => {
+  navHome.classList.add('active');
+  navEstadistico.classList.remove('active')
+});
+
+navEstadistico.addEventListener('click', () => {
+  navEstadistico.classList.add('active');
+  navHome.classList.remove('active')
+});
+
+
 
 
 for (let i = 0; i < datosEstadisticos.length; i++) {
@@ -236,7 +250,7 @@ btnIndicators.addEventListener('click', () => {
       let maxData = Math.max(...arrayFilterNumberData).toFixed(2);
       let promData = window.worldBank.averageData(arrayFilterNumberData).toFixed(2);
       let statisticalTable =
-        `<tr> <th scope="col">Datos estadisticos</th> <th scope="col">Valores</th> </tr> 
+        `<tr> <th scope="col">Datos estadisticos</th> <th scope="col">Valores %</th> </tr> 
          <tr> <td> Min. </td>
           <td>${minData}</td>
          </tr>

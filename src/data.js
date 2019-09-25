@@ -10,8 +10,8 @@ window.worldBank = {
 
   filterFemIndicators: (data) => {
     const genFem = data.filter(filterFem => {
-      const arrFemSector = filterFem.indicatorCode.includes('.FE');//hace una búsqueda dentro del strings//
-      return arrFemSector;
+      const porcentArrFemSector = filterFem.indicatorName.includes('%','mujeres')
+      return porcentArrFemSector;
     });
     return genFem;
   },
